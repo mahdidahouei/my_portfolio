@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_portfolio/src/ui/global/utils/constants.dart';
@@ -10,24 +12,34 @@ class IntroductionSection extends StatefulWidget {
 }
 
 class _IntroductionSectionState extends State<IntroductionSection> {
-  late final AppLocalizations localizations;
-  late final ThemeData themeData;
+  late AppLocalizations localizations;
+  late ThemeData themeData;
 
   Widget _buildWelcome() {
-    return Text(
+    return SelectableText(
       localizations.welcome,
+      style: themeData.textTheme.titleLarge,
     );
   }
 
   Widget _buildTitle() {
-    return Text(
-      localizations.introduceMe,
+    return SelectableText(
+      localizations.mahdiDahouei,
+      style: themeData.textTheme.displayMedium,
+    );
+  }
+
+  Widget _buildSubtitle() {
+    return SelectableText(
+      localizations.mobileApplicationDeveloper,
+      style: themeData.textTheme.headlineSmall,
     );
   }
 
   Widget _buildDescription() {
-    return Text(
+    return SelectableText(
       localizations.myDescription,
+      style: themeData.textTheme.bodyMedium,
     );
   }
 
@@ -35,15 +47,18 @@ class _IntroductionSectionState extends State<IntroductionSection> {
   Widget build(BuildContext context) {
     localizations = AppLocalizations.of(context)!;
     themeData = Theme.of(context);
+    final mediaQueryData = MediaQuery.of(context);
     return ConstrainedBox(
-      constraints: const BoxConstraints(
-        maxWidth: 600.0,
+      constraints: BoxConstraints(
+        maxWidth: max(mediaQueryData.size.width * 0.5, 600.0),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildWelcome(),
           kSpaceL,
           _buildTitle(),
+          _buildSubtitle(),
           kSpaceL,
           _buildDescription(),
         ],

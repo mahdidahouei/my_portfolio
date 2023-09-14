@@ -64,10 +64,7 @@ class MyScaffold extends StatelessWidget {
                   // (safeArea ? 0.0 : mediaQueryData.padding.top) +
                   appBar!.preferredSize.height,
                 ),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: appBar!,
-                ),
+                child: appBar!,
               ),
       ),
     );
