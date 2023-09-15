@@ -5,16 +5,22 @@ class ParallaxAssetImage extends StatelessWidget {
   ParallaxAssetImage(
     this.src, {
     Key? key,
+    this.aspectRatio = 5 / 4,
+    this.imageAspectRatio = 9 / 16,
   }) : super(key: key);
 
   final String src;
+
+  final double aspectRatio;
+
+  final double imageAspectRatio;
 
   final GlobalKey _imageKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 5 / 4,
+      aspectRatio: aspectRatio,
       child: Flow(
         delegate: ParallaxFlowDelegate(
           scrollable: Scrollable.of(context),
@@ -22,10 +28,13 @@ class ParallaxAssetImage extends StatelessWidget {
           backgroundImageKey: _imageKey,
         ),
         children: [
-          Image.asset(
-            src,
-            key: _imageKey,
-            fit: BoxFit.cover,
+          AspectRatio(
+            aspectRatio: imageAspectRatio,
+            child: Image.asset(
+              src,
+              key: _imageKey,
+              fit: BoxFit.cover,
+            ),
           ),
         ],
       ),

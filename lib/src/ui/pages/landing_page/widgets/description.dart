@@ -1,21 +1,30 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_portfolio/src/ui/global/utils/constants.dart';
+import 'package:my_portfolio/src/ui/global/widgets/app_button.dart';
 
 class Description extends StatelessWidget {
   const Description({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final mediaQueryData = MediaQuery.of(context);
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxWidth: max(mediaQueryData.size.width * 0.5, 600.0),
-      ),
-      child: Text("""
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero 
-      """),
+    final localizations = AppLocalizations.of(context)!;
+    final themeData = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          localizations.myDescription,
+          style: themeData.textTheme.headlineSmall,
+        ),
+        kSpaceL,
+        AppButton(
+          shrinkWrap: true,
+          primaryButton: false,
+          text: localizations.viewResume,
+          onTap: () {},
+        ),
+      ],
     );
   }
 }

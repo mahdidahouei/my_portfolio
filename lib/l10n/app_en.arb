@@ -2,11 +2,18 @@
     "welcome": "Welcome",
     "mahdiDahouei": "Mahdi Dahouei",
     "mobileApplicationDeveloper": "Mobile Application Developer",
-    "myDescription": "Senior mobile developer with 4+ years of experience in developing commercial flutter applications working with startup teams. Soley responsible for the deployment and management of three IOS and Android applications currently live on Google Play & App Store.",
+    "myDescription": "Mobile Application developer with over 4 years of experience in developing commercial flutter applications working with startup teams. Soley responsible for the deployment and management of three IOS and Android applications currently live on Google Play & App Store.",
     "stackoverflow": "Stackoverflow",
     "linkedin": "Linkedin",
     "telegram": "Telegram",
     "instagram": "Instagram",
     "soundcloud": "Soundcloud",
-    "youtube": "Youtube"
+    "youtube": "Youtube",
+    "gmail": "Gmail",
+    "github": "Github",
+    "afterhours": "Afterhours",
+    "afterhoursDescription": "Github",
+    "donak": "Donak",
+    "donakDescription": "Donak is a nature-friendly group that has started a social business to financially support its activities for the preservation and restoration of nature in Iran.\nwith donak payment application, you can easily do your daily financial transactions and plant a tree in different parts of our country.",
+    "viewResume": "View full resume"
 }

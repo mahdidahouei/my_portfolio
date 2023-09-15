@@ -20,6 +20,12 @@ class FadeSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
+
+    final border = BorderSide(
+      color: themeData.primaryColor,
+      width: 10.0,
+    );
+
     return ShaderMask(
       shaderCallback: (Rect rect) {
         return FixedLinearGradient(
@@ -80,7 +86,17 @@ class FadeSide extends StatelessWidget {
           ).createShader(rect);
         },
         blendMode: BlendMode.dstOut,
-        child: child,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            border: BorderDirectional(
+              start: start ? border : BorderSide.none,
+              top: top ? border : BorderSide.none,
+              end: end ? border : BorderSide.none,
+              bottom: bottom ? border : BorderSide.none,
+            ),
+          ),
+          child: child,
+        ),
       ),
     );
   }

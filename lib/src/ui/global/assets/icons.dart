@@ -18,4 +18,19 @@ class MyIcons {
       IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData youtube =
       IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData github =
+      IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData gmail =
+      IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+}
+
+class MyPngIcons {
+  static const github = "assets/images/github.png";
+  static const instagram = "assets/images/instagram.png";
+  static const linkedin = "assets/images/linkedin.png";
+  static const soundcloud = "assets/images/soundcloud.png";
+  static const stackoverflow = "assets/images/stackoverflow.png";
+  static const telegram = "assets/images/telegram.png";
+  static const youtube = "assets/images/youtube.png";
+  static const gmail = "assets/images/gmail.png";
 }

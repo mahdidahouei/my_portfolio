@@ -1,4 +1,4 @@
 
-function launchUrl(url) {
-    window.open(url, '_blank').focus();
-}
+//function launchUrl(url) {
+//    window.open(url, '_blank').focus();
+//}

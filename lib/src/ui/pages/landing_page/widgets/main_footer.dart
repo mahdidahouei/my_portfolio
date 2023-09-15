@@ -3,7 +3,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_portfolio/portfolio_info.dart';
 import 'package:my_portfolio/src/ui/global/assets/icons.dart';
 import 'package:my_portfolio/src/ui/global/utils/constants.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+import '../../../global/utils/url_launcher.dart';
 
 class MainFooter extends StatefulWidget {
   const MainFooter({Key? key}) : super(key: key);
@@ -15,18 +16,20 @@ class MainFooter extends StatefulWidget {
 class _MainFooterState extends State<MainFooter> {
   Widget _buildIcon({
     required IconData icon,
-    required String url,
+    String? url,
+    VoidCallback? onTap,
     String? tooltip,
   }) {
     return IconButton(
-      onPressed: () {
-        launchUrl(
-          Uri.parse(url),
-          webOnlyWindowName: "_blank",
-        );
-      },
+      onPressed: onTap ??
+          () {
+            if (url != null) {
+              launch(url);
+            }
+          },
       icon: Icon(
         icon,
+        color: Colors.white,
       ),
       color: _themeData.canvasColor,
       tooltip: tooltip,
@@ -39,18 +42,29 @@ class _MainFooterState extends State<MainFooter> {
   Widget build(BuildContext context) {
     _themeData = Theme.of(context);
     final localizations = AppLocalizations.of(context)!;
-    const spacing = SizedBox(width: 8.0);
+    const spacing = SizedBox(
+      width: 8.0,
+      height: 8.0,
+    );
     return Ink(
       color: _themeData.primaryColor,
       padding: kPagesPadding,
       child: Center(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          spacing: spacing.width!,
+          runSpacing: spacing.height!,
           children: [
             _buildIcon(
               icon: MyIcons.stackoverflow,
               url: myStackoverflow,
               tooltip: localizations.stackoverflow,
+            ),
+            spacing,
+            _buildIcon(
+              icon: MyIcons.github,
+              url: myGithub,
+              tooltip: localizations.github,
             ),
             spacing,
             _buildIcon(
@@ -63,6 +77,14 @@ class _MainFooterState extends State<MainFooter> {
               icon: MyIcons.telegram,
               url: myTelegram,
               tooltip: localizations.telegram,
+            ),
+            spacing,
+            _buildIcon(
+              icon: MyIcons.gmail,
+              onTap: () {
+                launchEmail(myEmail);
+              },
+              tooltip: localizations.gmail,
             ),
             spacing,
             _buildIcon(
