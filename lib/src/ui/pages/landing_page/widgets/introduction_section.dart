@@ -83,6 +83,9 @@ class _IntroductionSectionState extends State<IntroductionSection> {
             imageAssetSrc: MyPngIcons.github,
             url: myGithub,
             name: localizations.github,
+            imageColor: themeData.brightness == Brightness.light
+                ? const Color(0xff25292e)
+                : Colors.white.withOpacity(0.85),
           ),
           SocialIconButton(
             imageAssetSrc: MyPngIcons.linkedin,

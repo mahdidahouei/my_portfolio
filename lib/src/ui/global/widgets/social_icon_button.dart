@@ -7,17 +7,23 @@ class SocialIconButton extends StatelessWidget {
   const SocialIconButton({
     Key? key,
     this.url,
-    required this.imageAssetSrc,
+    this.imageAssetSrc,
+    this.icon,
     required this.name,
     this.onTap,
     this.tooltip,
-  }) : super(key: key);
+    this.imageColor,
+  })  : assert((imageAssetSrc == null && icon != null) ||
+            (imageAssetSrc != null && icon == null)),
+        super(key: key);
 
   final String? url;
   final VoidCallback? onTap;
-  final String imageAssetSrc;
+  final String? imageAssetSrc;
+  final Widget? icon;
   final String name;
   final String? tooltip;
+  final Color? imageColor;
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +44,17 @@ class SocialIconButton extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.asset(
-                  imageAssetSrc,
-                  fit: BoxFit.contain,
+                SizedBox(
                   height: 44.0,
                   width: 44.0,
+                  child: FittedBox(
+                    child: icon ??
+                        Image.asset(
+                          imageAssetSrc!,
+                          fit: BoxFit.contain,
+                          color: imageColor,
+                        ),
+                  ),
                 ),
                 const SizedBox(
                   height: 8.0,

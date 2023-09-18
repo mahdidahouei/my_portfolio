@@ -15,5 +15,18 @@
     "afterhoursDescription": "Github",
     "donak": "Donak",
     "donakDescription": "Donak is a nature-friendly group that has started a social business to financially support its activities for the preservation and restoration of nature in Iran.\nwith donak payment application, you can easily do your daily financial transactions and plant a tree in different parts of our country.",
-    "viewResume": "View full resume"
+    "viewResume": "View full resume",
+    "iCare": "I care",
+    "iCareDescription": "I'm all about the details. I care deeply about the little things – making sure every element lines up perfectly, animations are smooth, and user interactions are flawless. I believe in making apps where every tiny part counts. It's not just about writing code; it's about creating an experience that shows how much I care about making outstanding mobile apps. Every bit of code I write reflects my dedication to delivering apps that exceed what users expect.",
+    "aboutMe": "About me",
+    "workExperience": "Work Experience",
+    "publishedApplications": "Published applications",
+    "mySkills": "My skills",
+    "workedWith": "Worked with",
+    "flutter": "Flutter",
+    "dart": "Dart",
+    "bloc": "Bloc",
+    "git": "Git",
+    "android": "Android",
+    "socketIo": "Socket.IO"
 }

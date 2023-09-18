@@ -5,7 +5,7 @@ import '../animations/animated_size_switcher.dart';
 import 'dismissible_focus.dart';
 
 class AppButton extends StatelessWidget {
-  static const height = 64.0;
+  static const height = 44.0;
 
   const AppButton({
     Key? key,
@@ -16,7 +16,7 @@ class AppButton extends StatelessWidget {
     this.buttonHeight = height,
     this.text,
     this.textColor,
-    this.shrinkWrap = false,
+    this.shrinkWrap,
     this.padding,
     this.isLoading = false,
     this.enable,
@@ -44,7 +44,7 @@ class AppButton extends StatelessWidget {
   final double elevation;
   final BorderRadius borderRadius;
   final String? text;
-  final bool shrinkWrap;
+  final bool? shrinkWrap;
   final bool isLoading;
   final bool? enable;
   final bool primaryButton;
@@ -57,10 +57,11 @@ class AppButton extends StatelessWidget {
   final Color? textColor;
   final Color? buttonColor;
 
-  Widget _buildButton(BuildContext context) {
+  Widget _buildButton(BuildContext context, bool shrinkWrap) {
     final themeData = Theme.of(context);
 
     final enabled = enable ?? onTap != null;
+
     return Padding(
       padding: margin ?? EdgeInsets.zero,
       child: Material(
@@ -87,7 +88,7 @@ class AppButton extends StatelessWidget {
                       ? (buttonColor ?? themeData.primaryColor)
                       : themeData.disabledColor)
                   : (enabled
-                      ? themeData.colorScheme.secondary
+                      ? themeData.colorScheme.background
                       : themeData.disabledColor),
               borderRadius: borderRadius,
             ),
@@ -152,15 +153,16 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final shrinkWrap = this.shrinkWrap ?? !primaryButton;
     if (shrinkWrap) {
       return Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _buildButton(context),
+          _buildButton(context, shrinkWrap),
         ],
       );
     } else {
-      return _buildButton(context);
+      return _buildButton(context, shrinkWrap);
     }
   }
 }

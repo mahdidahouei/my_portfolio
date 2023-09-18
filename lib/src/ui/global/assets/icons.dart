@@ -25,7 +25,11 @@ class MyIcons {
 }
 
 class MyPngIcons {
+  static const android = "assets/images/android.png";
+  static const bloc = "assets/images/bloc.png";
+  static const dart = "assets/images/dart.png";
   static const github = "assets/images/github.png";
+  static const git = "assets/images/git.png";
   static const instagram = "assets/images/instagram.png";
   static const linkedin = "assets/images/linkedin.png";
   static const mahdidahouei = "assets/images/mahdidahouei.png";

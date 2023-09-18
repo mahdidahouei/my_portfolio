@@ -43,11 +43,11 @@ class _MainFooterState extends State<MainFooter> {
     _themeData = Theme.of(context);
     final localizations = AppLocalizations.of(context)!;
 
-    final mediaQueryData = MediaQuery.of(context);
-
-    final isSmall = mediaQueryData.size.width <= 485;
-
-    debugPrint("mediaQueryData.size.width:${mediaQueryData.size.width}");
+    // final mediaQueryData = MediaQuery.of(context);
+    //
+    // final isSmall = mediaQueryData.size.width <= 485;
+    //
+    // debugPrint("mediaQueryData.size.width:${mediaQueryData.size.width}");
 
     const spacing = SizedBox(
       width: 8.0,

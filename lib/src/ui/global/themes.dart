@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/src/ui/global/utils/constants.dart';
 
 class AppThemes {
   static const _primaryColorLight = Color(0xff6ABF64);
   static const _primaryColorDark = Color(0xff3E823C);
+  static const _secondaryColor = Color(0xff1D1B3A);
   static final _backgroundColor = _primaryColorLight.withOpacity(0.2);
   static const _scaffoldBackgroundColorDark = Color(0xff18191b);
 
@@ -11,9 +13,30 @@ class AppThemes {
         colorScheme: ColorScheme.fromSwatch().copyWith(
           background: _backgroundColor,
           brightness: Brightness.light,
+          secondary: _secondaryColor,
         ),
         textTheme: const TextTheme(
           bodyMedium: TextStyle(height: 1.5),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all(Colors.white),
+            overlayColor: MaterialStateProperty.all(Colors.black12),
+            padding: MaterialStateProperty.all(
+              const EdgeInsets.symmetric(
+                horizontal: 24.0,
+                vertical: 12.0,
+              ),
+            ),
+            textStyle: MaterialStateProperty.all(
+              const TextStyle(color: _primaryColorLight),
+            ),
+            shape: MaterialStateProperty.all(
+              const RoundedRectangleBorder(
+                borderRadius: kMyBorderRadius,
+              ),
+            ),
+          ),
         ),
       );
 
@@ -24,10 +47,29 @@ class AppThemes {
         colorScheme: ColorScheme.fromSwatch().copyWith(
           background: _backgroundColor,
           brightness: Brightness.dark,
+          secondary: _secondaryColor,
         ),
         textTheme: const TextTheme(
           bodyMedium: TextStyle(
             height: 1.5,
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all(Colors.white),
+            overlayColor: MaterialStateProperty.all(Colors.black12),
+            textStyle: MaterialStateProperty.all(
+              const TextStyle(color: _primaryColorDark),
+            ),
+            padding: MaterialStateProperty.all(const EdgeInsets.symmetric(
+              horizontal: 8.0,
+              vertical: 16.0,
+            )),
+            shape: MaterialStateProperty.all(
+              const RoundedRectangleBorder(
+                borderRadius: kMyBorderRadius,
+              ),
+            ),
           ),
         ),
       );

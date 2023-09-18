@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_portfolio/src/ui/global/utils/constants.dart';
 
+import '../../../global/widgets/app_button.dart';
+
 class Description extends StatelessWidget {
   const Description({Key? key}) : super(key: key);
 
@@ -13,15 +15,30 @@ class Description extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
+          localizations.aboutMe,
+          style: themeData.textTheme.displaySmall,
+        ),
+        kSpaceL,
+        Text(
           localizations.myDescription,
           style: themeData.textTheme.bodyMedium,
         ),
         kSpaceL,
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            localizations.viewResume,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            AppButton(
+              onTap: () {},
+              primaryButton: false,
+              text: localizations.viewResume,
+            ),
+            kSpaceL,
+            AppButton(
+              onTap: () {},
+              shrinkWrap: true,
+              text: localizations.publishedApplications,
+            ),
+          ],
         ),
       ],
     );
