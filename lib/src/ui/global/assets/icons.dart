@@ -28,6 +28,7 @@ class MyPngIcons {
   static const github = "assets/images/github.png";
   static const instagram = "assets/images/instagram.png";
   static const linkedin = "assets/images/linkedin.png";
+  static const mahdidahouei = "assets/images/mahdidahouei.png";
   static const soundcloud = "assets/images/soundcloud.png";
   static const stackoverflow = "assets/images/stackoverflow.png";
   static const telegram = "assets/images/telegram.png";

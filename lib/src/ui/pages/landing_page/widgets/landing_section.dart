@@ -26,9 +26,11 @@ class LandingSection extends StatelessWidget {
 
     final shouldBeVertical = mediaQueryData.size.width <= determinantWidth;
 
+    final isSmall = mediaQueryData.size.width <= 485;
+
     Widget buildContent() {
       return Padding(
-        padding: kPagesPadding,
+        padding: isSmall ? kPagesPaddingSmall : kPagesPadding,
         child: SizedBox(
           width: max(mediaQueryData.size.width * 0.45, determinantWidth * 0.45),
           child: content,

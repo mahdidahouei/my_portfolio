@@ -21,21 +21,21 @@ class _IntroductionSectionState extends State<IntroductionSection> {
   Widget _buildWelcome() {
     return SelectableText(
       localizations.welcome,
-      style: themeData.textTheme.titleLarge,
+      style: themeData.textTheme.bodyLarge,
     );
   }
 
   Widget _buildTitle() {
     return SelectableText(
       localizations.mahdiDahouei,
-      style: themeData.textTheme.displayMedium,
+      style: themeData.textTheme.displaySmall,
     );
   }
 
   Widget _buildSubtitle() {
     return SelectableText(
       localizations.mobileApplicationDeveloper,
-      style: themeData.textTheme.headlineSmall,
+      style: themeData.textTheme.titleLarge,
     );
   }
 
@@ -67,6 +67,14 @@ class _IntroductionSectionState extends State<IntroductionSection> {
         shrinkWrap: true,
         children: [
           SocialIconButton(
+            imageAssetSrc: MyPngIcons.gmail,
+            onTap: () {
+              launchEmail(myEmail);
+            },
+            name: localizations.gmail,
+            // tooltip: myEmail,
+          ),
+          SocialIconButton(
             imageAssetSrc: MyPngIcons.stackoverflow,
             url: myStackoverflow,
             name: localizations.stackoverflow,
@@ -82,22 +90,14 @@ class _IntroductionSectionState extends State<IntroductionSection> {
             name: localizations.linkedin,
           ),
           SocialIconButton(
-            imageAssetSrc: MyPngIcons.telegram,
-            url: myTelegram,
-            name: localizations.telegram,
-          ),
-          SocialIconButton(
-            imageAssetSrc: MyPngIcons.gmail,
-            onTap: () {
-              launchEmail(myEmail);
-            },
-            name: localizations.gmail,
-            // tooltip: myEmail,
-          ),
-          SocialIconButton(
             imageAssetSrc: MyPngIcons.instagram,
             url: myInstagram,
             name: localizations.instagram,
+          ),
+          SocialIconButton(
+            imageAssetSrc: MyPngIcons.youtube,
+            url: myYoutube,
+            name: localizations.youtube,
           ),
           SocialIconButton(
             imageAssetSrc: MyPngIcons.soundcloud,
@@ -105,9 +105,9 @@ class _IntroductionSectionState extends State<IntroductionSection> {
             name: localizations.soundcloud,
           ),
           SocialIconButton(
-            imageAssetSrc: MyPngIcons.youtube,
-            url: myYoutube,
-            name: localizations.youtube,
+            imageAssetSrc: MyPngIcons.telegram,
+            url: myTelegram,
+            name: localizations.telegram,
           ),
         ],
       ),
@@ -121,14 +121,18 @@ class _IntroductionSectionState extends State<IntroductionSection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildWelcome(),
         kSpaceL,
+        _buildWelcome(),
+        const SizedBox(
+          height: 8.0,
+        ),
         _buildTitle(),
         _buildSubtitle(),
         kSpaceL,
         // _buildDescription(),
         // kSpaceL,
-        _buildSocials()
+        _buildSocials(),
+        kSpaceL,
       ],
     );
   }

@@ -42,6 +42,13 @@ class _MainFooterState extends State<MainFooter> {
   Widget build(BuildContext context) {
     _themeData = Theme.of(context);
     final localizations = AppLocalizations.of(context)!;
+
+    final mediaQueryData = MediaQuery.of(context);
+
+    final isSmall = mediaQueryData.size.width <= 485;
+
+    debugPrint("mediaQueryData.size.width:${mediaQueryData.size.width}");
+
     const spacing = SizedBox(
       width: 8.0,
       height: 8.0,
@@ -60,25 +67,21 @@ class _MainFooterState extends State<MainFooter> {
               url: myStackoverflow,
               tooltip: localizations.stackoverflow,
             ),
-            spacing,
             _buildIcon(
               icon: MyIcons.github,
               url: myGithub,
               tooltip: localizations.github,
             ),
-            spacing,
             _buildIcon(
               icon: MyIcons.linkedin,
               url: myLinkedin,
               tooltip: localizations.linkedin,
             ),
-            spacing,
             _buildIcon(
               icon: MyIcons.telegram,
               url: myTelegram,
               tooltip: localizations.telegram,
             ),
-            spacing,
             _buildIcon(
               icon: MyIcons.gmail,
               onTap: () {
@@ -86,19 +89,16 @@ class _MainFooterState extends State<MainFooter> {
               },
               tooltip: localizations.gmail,
             ),
-            spacing,
             _buildIcon(
               icon: MyIcons.instagram,
               url: myInstagram,
               tooltip: localizations.instagram,
             ),
-            spacing,
             _buildIcon(
               icon: MyIcons.soundcloud,
               url: mySoundCloud,
               tooltip: localizations.soundcloud,
             ),
-            spacing,
             _buildIcon(
               icon: MyIcons.youtube,
               url: myYoutube,

@@ -32,8 +32,8 @@ class SocialIconButton extends StatelessWidget {
               }
             },
         child: SizedBox(
-          height: 100.0,
-          width: 100.0,
+          height: 116.0,
+          width: 116.0,
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -47,10 +47,13 @@ class SocialIconButton extends StatelessWidget {
                 const SizedBox(
                   height: 8.0,
                 ),
-                FittedBox(
-                  child: Text(
-                    name,
-                    style: themeData.textTheme.labelLarge,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                  child: FittedBox(
+                    child: Text(
+                      name,
+                      style: themeData.textTheme.labelLarge,
+                    ),
                   ),
                 ),
               ],

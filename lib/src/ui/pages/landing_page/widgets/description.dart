@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_portfolio/src/ui/global/utils/constants.dart';
-import 'package:my_portfolio/src/ui/global/widgets/app_button.dart';
 
 class Description extends StatelessWidget {
   const Description({Key? key}) : super(key: key);
@@ -15,14 +14,14 @@ class Description extends StatelessWidget {
       children: [
         Text(
           localizations.myDescription,
-          style: themeData.textTheme.headlineSmall,
+          style: themeData.textTheme.bodyMedium,
         ),
         kSpaceL,
-        AppButton(
-          shrinkWrap: true,
-          primaryButton: false,
-          text: localizations.viewResume,
-          onTap: () {},
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            localizations.viewResume,
+          ),
         ),
       ],
     );

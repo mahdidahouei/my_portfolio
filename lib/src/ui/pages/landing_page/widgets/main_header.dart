@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/src/ui/global/utils/constants.dart';
+import 'package:my_portfolio/src/ui/global/widgets/my_logo.dart';
 
 class MainHeader extends StatelessWidget implements PreferredSizeWidget {
   const MainHeader({Key? key}) : super(key: key);
@@ -13,9 +14,7 @@ class MainHeader extends StatelessWidget implements PreferredSizeWidget {
           SizedBox(
             width: kPagesPaddingValue,
           ),
-          FlutterLogo(
-            size: 40.0,
-          ),
+          MyLogo(),
         ],
       ),
     );
