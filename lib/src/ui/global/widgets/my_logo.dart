@@ -9,9 +9,8 @@ class MyLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      MyPngIcons.mahdidahouei,
+      MyPngIcons.mahdi,
       height: size,
-      width: size,
       fit: BoxFit.contain,
     );
   }

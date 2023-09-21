@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:my_portfolio/src/ui/global/themes.dart';
+import 'package:my_portfolio/src/ui/global/themes/themes.dart';
 
 import 'ui/pages/landing_page/landing_page.dart';
 
@@ -10,6 +10,7 @@ class MahdiDahoueiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Mahdi Dahouei",
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: AppThemes.light,
