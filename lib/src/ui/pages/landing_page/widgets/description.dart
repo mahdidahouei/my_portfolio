@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_portfolio/portfolio_info.dart';
 import 'package:my_portfolio/src/ui/global/utils/constants.dart';
+import 'package:my_portfolio/src/ui/global/utils/url_launcher.dart';
 
 import '../../../global/widgets/app_button.dart';
 
@@ -28,7 +30,9 @@ class Description extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             AppButton(
-              onTap: () {},
+              onTap: () {
+                launch(myResume);
+              },
               primaryButton: false,
               text: localizations.viewResume,
             ),

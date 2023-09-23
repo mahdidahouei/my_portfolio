@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kSpaceL = SizedBox(
-  height: 16.0,
+  height: 32.0,
   width: 8.0,
 );
 

@@ -87,10 +87,14 @@ class AppButton extends StatelessWidget {
                   ? (enabled
                       ? (buttonColor ?? themeData.primaryColor)
                       : themeData.disabledColor)
-                  : (enabled
-                      ? themeData.colorScheme.background
-                      : themeData.disabledColor),
+                  : Colors.transparent,
               borderRadius: borderRadius,
+              border: Border.all(
+                color: enabled
+                    ? (buttonColor ?? themeData.primaryColor)
+                    : themeData.disabledColor,
+                width: 1.0,
+              ),
             ),
             width: shrinkWrap ? null : buttonWidth,
             height: buttonHeight,

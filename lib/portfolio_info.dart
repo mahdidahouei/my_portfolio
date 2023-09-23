@@ -7,6 +7,8 @@ const myInstagram = "https://instagram.com/mahdidahouei";
 const mySoundCloud = "https://soundcloud.com/mahdidahouei";
 const myYoutube = "https://youtube.com/@MahdiDahouei?si=2g5K7bseX5JO1bar";
 const myEmail = "mahdidahouei2000@gmail.com";
+const myResume =
+    "https://github.com/mahdidahouei/mahdidahouei/files/12565766/cv-mahdi.dahouei.pdf";
 
 const afterhoursGooglePlay =
     "https://play.google.com/store/apps/details?id=com.afthr.afterhours";

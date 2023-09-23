@@ -25,8 +25,13 @@
     "workedWith": "Worked with",
     "flutter": "Flutter",
     "dart": "Dart",
-    "bloc": "Bloc",
+    "bloc": "Bloc library",
     "git": "Git",
     "android": "Android",
-    "socketIo": "Socket.IO"
+    "socketIo": "Socket.IO",
+    "requestProject": "Request a Flutter project",
+    "java": "Java",
+    "swift": "Swift",
+    "nodejs": "Node.js",
+    "figma": "Figma"
 }
