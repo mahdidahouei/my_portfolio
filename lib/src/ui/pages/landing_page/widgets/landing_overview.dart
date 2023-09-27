@@ -28,6 +28,10 @@ class LandingOverview extends StatelessWidget {
     final height = mediaQueryData.size.height - appBarHeight;
     final renderBox = context.findRenderObject();
     final isBigEnough = mediaQueryData.size.width > 500;
+
+    final subtractNumber = mediaQueryData.size.width < 828.0
+        ? 500 + ((828 - mediaQueryData.size.width) / 3.5)
+        : 500.0;
     final actionButtons = [
       AppButton(
         onTap: () {
@@ -107,7 +111,7 @@ class LandingOverview extends StatelessWidget {
                     Column(
                       children: [
                         SizedBox(
-                          height: max((height * 0.75) - 485, 36.0),
+                          height: max((height * 0.78) - subtractNumber, 20.0),
                         ),
                         const IntroductionSection(
                           maxIconsPerRow: 0,
@@ -115,6 +119,13 @@ class LandingOverview extends StatelessWidget {
                         ),
                         kSpaceL,
                         const MySkills(),
+                        kSpaceL,
+                        Text(
+                          localizations.myDescription,
+                          style: themeData.textTheme.bodyMedium!
+                              .apply(color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
                         kSpaceL,
                         if (isBigEnough)
                           Row(
@@ -127,17 +138,6 @@ class LandingOverview extends StatelessWidget {
                             children: actionButtons,
                           ),
                         kSpaceL,
-                        // SelectableText(
-                        //   localizations.mahdiDahouei,
-                        //   style: themeData.textTheme.displaySmall,
-                        // ),
-                        // kSpaceL,
-                        // SelectableText(
-                        //   localizations.mobileApplicationDeveloper,
-                        //   style: themeData.textTheme.titleLarge,
-                        // ),
-                        // kSpaceL,
-                        // const SocialsButtons(),
                       ],
                     ),
                     Center(

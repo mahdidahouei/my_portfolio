@@ -61,7 +61,10 @@ class LandingPage extends StatelessWidget {
               onPressed: () {
                 launchEmail(myEmail);
               },
-              child: const Icon(Icons.rocket_launch_rounded),
+              child: const Icon(
+                Icons.rocket_launch_rounded,
+                color: Colors.white,
+              ),
             ),
     );
   }
