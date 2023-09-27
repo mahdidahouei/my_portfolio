@@ -18,13 +18,6 @@ class MySkills extends StatelessWidget {
       alignment: WrapAlignment.center,
       children: [
         Skill(
-          icon: Image.asset(MyPngIcons.dart),
-          name: localizations.dart,
-          onTap: () {
-            launch(dartSite);
-          },
-        ),
-        Skill(
           icon: const FlutterLogo(),
           name: localizations.flutter,
           onTap: () {
@@ -39,6 +32,20 @@ class MySkills extends StatelessWidget {
           },
         ),
         Skill(
+          icon: Image.asset(MyPngIcons.figma),
+          name: localizations.figma,
+          onTap: () {
+            launch(figmaSite);
+          },
+        ),
+        Skill(
+          icon: Image.asset(MyPngIcons.dart),
+          name: localizations.dart,
+          onTap: () {
+            launch(dartSite);
+          },
+        ),
+        Skill(
           icon: Image.asset(MyPngIcons.swift),
           name: localizations.swift,
           onTap: () {
@@ -50,13 +57,6 @@ class MySkills extends StatelessWidget {
           name: localizations.java,
           onTap: () {
             launch(javaSite);
-          },
-        ),
-        Skill(
-          icon: Image.asset(MyPngIcons.figma),
-          name: localizations.figma,
-          onTap: () {
-            launch(figmaSite);
           },
         ),
       ],
