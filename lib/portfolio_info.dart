@@ -1,7 +1,7 @@
 const myStackoverflow =
     "https://stackoverflow.com/users/11989412/mahdi-dahouei";
 const myGithub = "https://github.com/mahdidahouei";
-const myLinkedin = "https://www.linkedin.com/in/mahdi-dahouei-6a5002121";
+const myLinkedin = "https://www.linkedin.com/in/mahdidahouei";
 const myTelegram = "https://t.me/mahdidahouei";
 const myInstagram = "https://instagram.com/mahdidahouei";
 const mySoundCloud = "https://soundcloud.com/mahdidahouei";

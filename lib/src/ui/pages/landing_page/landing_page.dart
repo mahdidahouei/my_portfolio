@@ -22,10 +22,11 @@ class LandingPage extends StatelessWidget {
     );
 
     return MyScaffold(
-      appBar: appBar,
+      // appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           children: [
+            appBar,
             LandingOverview(
               appBarHeight: appBar.preferredSize.height,
             ),
